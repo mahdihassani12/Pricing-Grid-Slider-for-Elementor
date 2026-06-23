@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Pricing Grid & Slider for Elementor
  * Description: A flexible Elementor pricing plans widget with Grid/Slider modes, RTL support, and deep style controls.
- * Version: 1.0.6
+ * Version: 1.0.7
  * Author: Mahdi Hassani
  * Author URI: 
  * License: GPLv2 or later
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 final class Mahdi_Pricing_Plans_Plugin {
-    const VERSION = '1.0.6';
+    const VERSION = '1.0.7';
     const MINIMUM_ELEMENTOR_VERSION = '3.5.0';
     const MINIMUM_PHP_VERSION = '7.4';
 
@@ -61,7 +61,7 @@ final class Mahdi_Pricing_Plans_Plugin {
     }
 
     public function admin_notice_missing_elementor() {
-        if ( isset( $_GET['activate'] ) ) {
+        if ( isset( $_GET['activate'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Core activation flag only; no action is taken from user input.
             unset( $_GET['activate'] );
         }
         echo '<div class="notice notice-warning is-dismissible"><p>' . esc_html__( 'Pricing Grid & Slider for Elementor requires Elementor to be installed and activated.', 'pricing-grid-slider-for-elementor' ) . '</p></div>';
