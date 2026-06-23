@@ -41,7 +41,7 @@ class Pricing_Plans_Widget extends Widget_Base {
     }
 
     public function get_script_depends() {
-        return [ 'elementor-frontend', 'pricing-grid-slider-for-elementor' ];
+        return [ 'pricing-grid-slider-for-elementor' ];
     }
 
     protected function register_controls() {
@@ -680,7 +680,7 @@ class Pricing_Plans_Widget extends Widget_Base {
 
         foreach ( $labels as $label ) {
             $features[] = [
-                'feature_text' => esc_html__( $label, 'pricing-grid-slider-for-elementor' ),
+                'feature_text' => $label,
                 'feature_icon' => [
                     'value' => 'fas fa-check',
                     'library' => 'fa-solid',
@@ -701,7 +701,7 @@ class Pricing_Plans_Widget extends Widget_Base {
                 'currency' => '$',
                 'price' => '19',
                 'period' => esc_html__( '/ month', 'pricing-grid-slider-for-elementor' ),
-                'features_list' => $this->get_default_features( [ '5 projects', 'Basic support', 'Core analytics', 'Community access' ] ),
+                'features_list' => $this->get_default_features( [ esc_html__( '5 projects', 'pricing-grid-slider-for-elementor' ), esc_html__( 'Basic support', 'pricing-grid-slider-for-elementor' ), esc_html__( 'Core analytics', 'pricing-grid-slider-for-elementor' ), esc_html__( 'Community access', 'pricing-grid-slider-for-elementor' ) ] ),
                 'button_text' => esc_html__( 'Start Now', 'pricing-grid-slider-for-elementor' ),
                 'button_link' => [ 'url' => '#' ],
                 'badge_text' => '',
@@ -713,7 +713,7 @@ class Pricing_Plans_Widget extends Widget_Base {
                 'currency' => '$',
                 'price' => '49',
                 'period' => esc_html__( '/ month', 'pricing-grid-slider-for-elementor' ),
-                'features_list' => $this->get_default_features( [ 'Unlimited projects', 'Priority support', 'Advanced analytics', 'Custom integrations' ] ),
+                'features_list' => $this->get_default_features( [ esc_html__( 'Unlimited projects', 'pricing-grid-slider-for-elementor' ), esc_html__( 'Priority support', 'pricing-grid-slider-for-elementor' ), esc_html__( 'Advanced analytics', 'pricing-grid-slider-for-elementor' ), esc_html__( 'Custom integrations', 'pricing-grid-slider-for-elementor' ) ] ),
                 'button_text' => esc_html__( 'Choose Pro', 'pricing-grid-slider-for-elementor' ),
                 'button_link' => [ 'url' => '#' ],
                 'badge_text' => esc_html__( 'Popular', 'pricing-grid-slider-for-elementor' ),
@@ -725,7 +725,7 @@ class Pricing_Plans_Widget extends Widget_Base {
                 'currency' => '$',
                 'price' => '99',
                 'period' => esc_html__( '/ month', 'pricing-grid-slider-for-elementor' ),
-                'features_list' => $this->get_default_features( [ 'Everything in Pro', 'Dedicated manager', 'SLA support', 'White-label options' ] ),
+                'features_list' => $this->get_default_features( [ esc_html__( 'Everything in Pro', 'pricing-grid-slider-for-elementor' ), esc_html__( 'Dedicated manager', 'pricing-grid-slider-for-elementor' ), esc_html__( 'SLA support', 'pricing-grid-slider-for-elementor' ), esc_html__( 'White-label options', 'pricing-grid-slider-for-elementor' ) ] ),
                 'button_text' => esc_html__( 'Contact Sales', 'pricing-grid-slider-for-elementor' ),
                 'button_link' => [ 'url' => '#' ],
                 'badge_text' => '',
@@ -824,17 +824,59 @@ class Pricing_Plans_Widget extends Widget_Base {
         return $features;
     }
 
+    private function sanitize_css_value( $value ) {
+        $value = is_scalar( $value ) ? trim( (string) $value ) : '';
+
+        if ( '' === $value ) {
+            return '';
+        }
+
+        return preg_match( '/^[#a-zA-Z0-9\s(),.%+-]+$/', $value ) ? $value : '';
+    }
+
     private function build_inline_style( $styles ) {
         $style = '';
 
         foreach ( $styles as $property => $value ) {
-            if ( '' === $value || null === $value ) {
+            $property = sanitize_key( $property );
+            $value    = $this->sanitize_css_value( $value );
+
+            if ( '' === $property || '' === $value ) {
                 continue;
             }
-            $style .= sanitize_key( $property ) . ':' . esc_attr( $value ) . ';';
+
+            $style .= $property . ':' . esc_attr( $value ) . ';';
         }
 
         return $style ? ' style="' . $style . '"' : '';
+    }
+
+    private function get_safe_link_attributes( $link ) {
+        $attributes = [
+            'href' => '#',
+            'rel'  => [],
+        ];
+
+        if ( ! empty( $link['url'] ) ) {
+            $attributes['href'] = esc_url( $link['url'] );
+        }
+
+        if ( ! empty( $link['is_external'] ) ) {
+            $attributes['target'] = '_blank';
+            $attributes['rel'][]  = 'noopener';
+        }
+
+        if ( ! empty( $link['nofollow'] ) ) {
+            $attributes['rel'][] = 'nofollow';
+        }
+
+        if ( ! empty( $link['custom_attributes'] ) ) {
+            $attributes['custom'] = Utils::parse_custom_attributes( $link['custom_attributes'] );
+        }
+
+        $attributes['rel'] = array_unique( array_filter( $attributes['rel'] ) );
+
+        return $attributes;
     }
 
     private function render_plan( $plan, $index, $is_slider ) {
@@ -898,10 +940,20 @@ class Pricing_Plans_Widget extends Widget_Base {
         }
 
         if ( ! empty( $plan['button_text'] ) ) {
-            $url = ! empty( $plan['button_link']['url'] ) ? $plan['button_link']['url'] : '#';
-            $target = ! empty( $plan['button_link']['is_external'] ) ? ' target="_blank"' : '';
-            $nofollow = ! empty( $plan['button_link']['nofollow'] ) ? ' rel="nofollow"' : '';
-            echo '<a class="mpp-button" href="' . esc_url( $url ) . '"' . $target . $nofollow . '>' . esc_html( $plan['button_text'] ) . '</a>';
+            $link_attributes = $this->get_safe_link_attributes( $plan['button_link'] ?? [] );
+            echo '<a class="mpp-button" href="' . esc_url( $link_attributes['href'] ) . '"';
+            if ( ! empty( $link_attributes['target'] ) ) {
+                echo ' target="' . esc_attr( $link_attributes['target'] ) . '"';
+            }
+            if ( ! empty( $link_attributes['rel'] ) ) {
+                echo ' rel="' . esc_attr( implode( ' ', $link_attributes['rel'] ) ) . '"';
+            }
+            if ( ! empty( $link_attributes['custom'] ) && is_array( $link_attributes['custom'] ) ) {
+                foreach ( $link_attributes['custom'] as $attribute_name => $attribute_value ) {
+                    echo ' ' . esc_attr( $attribute_name ) . '="' . esc_attr( $attribute_value ) . '"';
+                }
+            }
+            echo '>' . esc_html( $plan['button_text'] ) . '</a>';
         }
 
         echo '</article>';
