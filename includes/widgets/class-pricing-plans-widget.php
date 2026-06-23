@@ -21,7 +21,7 @@ class Pricing_Plans_Widget extends Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__( 'Benyamin Hope Pricing', 'mahdi-pricing-plans' );
+        return esc_html__( 'Pricing Grid & Slider for Elementor', 'pricing-grid-slider-for-elementor' );
     }
 
     public function get_icon() {
@@ -37,28 +37,28 @@ class Pricing_Plans_Widget extends Widget_Base {
     }
 
     public function get_style_depends() {
-        return [ 'swiper', 'e-swiper', 'mahdi-pricing-plans' ];
+        return [ 'swiper', 'e-swiper', 'pricing-grid-slider-for-elementor' ];
     }
 
     public function get_script_depends() {
-        return [ 'elementor-frontend', 'mahdi-pricing-plans' ];
+        return [ 'elementor-frontend', 'pricing-grid-slider-for-elementor' ];
     }
 
     protected function register_controls() {
         $this->start_controls_section(
             'section_layout',
-            [ 'label' => esc_html__( 'Layout', 'mahdi-pricing-plans' ) ]
+            [ 'label' => esc_html__( 'Layout', 'pricing-grid-slider-for-elementor' ) ]
         );
 
         $this->add_control(
             'layout_type',
             [
-                'label'   => esc_html__( 'Display Mode', 'mahdi-pricing-plans' ),
+                'label'   => esc_html__( 'Display Mode', 'pricing-grid-slider-for-elementor' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'grid',
                 'options' => [
-                    'grid'   => esc_html__( 'Grid', 'mahdi-pricing-plans' ),
-                    'slider' => esc_html__( 'Slider', 'mahdi-pricing-plans' ),
+                    'grid'   => esc_html__( 'Grid', 'pricing-grid-slider-for-elementor' ),
+                    'slider' => esc_html__( 'Slider', 'pricing-grid-slider-for-elementor' ),
                 ],
             ]
         );
@@ -66,7 +66,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         $this->add_responsive_control(
             'columns',
             [
-                'label'     => esc_html__( 'Grid Columns', 'mahdi-pricing-plans' ),
+                'label'     => esc_html__( 'Grid Columns', 'pricing-grid-slider-for-elementor' ),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => '3',
                 'tablet_default' => '2',
@@ -82,7 +82,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         $this->add_responsive_control(
             'gap',
             [
-                'label' => esc_html__( 'Gap', 'mahdi-pricing-plans' ),
+                'label' => esc_html__( 'Gap', 'pricing-grid-slider-for-elementor' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', 'em', 'rem' ],
                 'range' => [ 'px' => [ 'min' => 0, 'max' => 80 ] ],
@@ -98,10 +98,10 @@ class Pricing_Plans_Widget extends Widget_Base {
         $this->add_control(
             'equal_height',
             [
-                'label' => esc_html__( 'Equal Height Cards', 'mahdi-pricing-plans' ),
+                'label' => esc_html__( 'Equal Height Cards', 'pricing-grid-slider-for-elementor' ),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Yes', 'mahdi-pricing-plans' ),
-                'label_off' => esc_html__( 'No', 'mahdi-pricing-plans' ),
+                'label_on' => esc_html__( 'Yes', 'pricing-grid-slider-for-elementor' ),
+                'label_off' => esc_html__( 'No', 'pricing-grid-slider-for-elementor' ),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -110,7 +110,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         $this->add_control(
             'slider_options_heading',
             [
-                'label' => esc_html__( 'Slider Options', 'mahdi-pricing-plans' ),
+                'label' => esc_html__( 'Slider Options', 'pricing-grid-slider-for-elementor' ),
                 'type' => Controls_Manager::HEADING,
                 'condition' => [ 'layout_type' => 'slider' ],
             ]
@@ -119,7 +119,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         $this->add_responsive_control(
             'slides_per_view',
             [
-                'label' => esc_html__( 'Slides Per View', 'mahdi-pricing-plans' ),
+                'label' => esc_html__( 'Slides Per View', 'pricing-grid-slider-for-elementor' ),
                 'type' => Controls_Manager::SELECT,
                 'default' => '3',
                 'tablet_default' => '2',
@@ -132,7 +132,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         $this->add_control(
             'slider_loop',
             [
-                'label' => esc_html__( 'Loop', 'mahdi-pricing-plans' ),
+                'label' => esc_html__( 'Loop', 'pricing-grid-slider-for-elementor' ),
                 'type' => Controls_Manager::SWITCHER,
                 'return_value' => 'yes',
                 'default' => '',
@@ -143,7 +143,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         $this->add_control(
             'slider_autoplay',
             [
-                'label' => esc_html__( 'Autoplay', 'mahdi-pricing-plans' ),
+                'label' => esc_html__( 'Autoplay', 'pricing-grid-slider-for-elementor' ),
                 'type' => Controls_Manager::SWITCHER,
                 'return_value' => 'yes',
                 'default' => '',
@@ -154,7 +154,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         $this->add_control(
             'slider_arrows',
             [
-                'label' => esc_html__( 'Arrows', 'mahdi-pricing-plans' ),
+                'label' => esc_html__( 'Arrows', 'pricing-grid-slider-for-elementor' ),
                 'type' => Controls_Manager::SWITCHER,
                 'return_value' => 'yes',
                 'default' => 'yes',
@@ -165,7 +165,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         $this->add_control(
             'slider_dots',
             [
-                'label' => esc_html__( 'Pagination Dots', 'mahdi-pricing-plans' ),
+                'label' => esc_html__( 'Pagination Dots', 'pricing-grid-slider-for-elementor' ),
                 'type' => Controls_Manager::SWITCHER,
                 'return_value' => 'yes',
                 'default' => 'yes',
@@ -177,7 +177,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         $this->add_responsive_control(
             'slider_side_padding',
             [
-                'label' => esc_html__( 'Slider Side Padding', 'mahdi-pricing-plans' ),
+                'label' => esc_html__( 'Slider Side Padding', 'pricing-grid-slider-for-elementor' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', 'em', 'rem' ],
                 'range' => [ 'px' => [ 'min' => 0, 'max' => 120 ] ],
@@ -193,60 +193,60 @@ class Pricing_Plans_Widget extends Widget_Base {
 
         $this->start_controls_section(
             'section_plans',
-            [ 'label' => esc_html__( 'Benyamin Hope Pricing', 'mahdi-pricing-plans' ) ]
+            [ 'label' => esc_html__( 'Pricing Grid & Slider for Elementor', 'pricing-grid-slider-for-elementor' ) ]
         );
 
         $plan_repeater = new Repeater();
 
         $plan_repeater->add_control( 'badge_text', [
-            'label' => esc_html__( 'Badge', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Badge', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::TEXT,
-            'default' => esc_html__( 'Popular', 'mahdi-pricing-plans' ),
+            'default' => esc_html__( 'Popular', 'pricing-grid-slider-for-elementor' ),
             'label_block' => true,
         ] );
 
         $plan_repeater->add_control( 'title', [
-            'label' => esc_html__( 'Title', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Title', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::TEXT,
-            'default' => esc_html__( 'Pro', 'mahdi-pricing-plans' ),
+            'default' => esc_html__( 'Pro', 'pricing-grid-slider-for-elementor' ),
             'label_block' => true,
         ] );
 
         $plan_repeater->add_control( 'subtitle', [
-            'label' => esc_html__( 'Subtitle', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Subtitle', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::TEXTAREA,
-            'default' => esc_html__( 'For growing businesses that need more power.', 'mahdi-pricing-plans' ),
+            'default' => esc_html__( 'For growing businesses that need more power.', 'pricing-grid-slider-for-elementor' ),
         ] );
 
         $plan_repeater->add_control( 'currency', [
-            'label' => esc_html__( 'Currency', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Currency', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::TEXT,
             'default' => '$',
         ] );
 
         $plan_repeater->add_control( 'price', [
-            'label' => esc_html__( 'Price', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Price', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::TEXT,
             'default' => '29',
         ] );
 
         $plan_repeater->add_control( 'period', [
-            'label' => esc_html__( 'Period', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Period', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::TEXT,
-            'default' => esc_html__( '/ month', 'mahdi-pricing-plans' ),
+            'default' => esc_html__( '/ month', 'pricing-grid-slider-for-elementor' ),
         ] );
 
         $feature_repeater = new Repeater();
 
         $feature_repeater->add_control( 'feature_text', [
-            'label' => esc_html__( 'Label', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Label', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::TEXT,
-            'default' => esc_html__( 'Unlimited projects', 'mahdi-pricing-plans' ),
+            'default' => esc_html__( 'Unlimited projects', 'pricing-grid-slider-for-elementor' ),
             'label_block' => true,
         ] );
 
         $feature_repeater->add_control( 'feature_icon', [
-            'label' => esc_html__( 'Icon', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Icon', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::ICONS,
             'default' => [
                 'value' => 'fas fa-check',
@@ -257,17 +257,17 @@ class Pricing_Plans_Widget extends Widget_Base {
         ] );
 
         $feature_repeater->add_control( 'feature_icon_color', [
-            'label' => esc_html__( 'Icon Color', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Icon Color', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
         ] );
 
         $feature_repeater->add_control( 'feature_text_color', [
-            'label' => esc_html__( 'Label Color', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Label Color', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
         ] );
 
         $plan_repeater->add_control( 'features_list', [
-            'label' => esc_html__( 'Features', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Features', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::REPEATER,
             'fields' => $feature_repeater->get_controls(),
             'default' => $this->get_default_features( [
@@ -280,20 +280,20 @@ class Pricing_Plans_Widget extends Widget_Base {
         ] );
 
         $plan_repeater->add_control( 'button_text', [
-            'label' => esc_html__( 'Button Text', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Button Text', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::TEXT,
-            'default' => esc_html__( 'Get Started', 'mahdi-pricing-plans' ),
+            'default' => esc_html__( 'Get Started', 'pricing-grid-slider-for-elementor' ),
         ] );
 
         $plan_repeater->add_control( 'button_link', [
-            'label' => esc_html__( 'Button Link', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Button Link', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::URL,
             'placeholder' => 'https://example.com',
             'default' => [ 'url' => '#' ],
         ] );
 
         $plan_repeater->add_control( 'is_featured', [
-            'label' => esc_html__( 'Featured Plan', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Featured Plan', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::SWITCHER,
             'return_value' => 'yes',
             'default' => '',
@@ -302,7 +302,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         $this->add_control(
             'plans',
             [
-                'label' => esc_html__( 'Plans', 'mahdi-pricing-plans' ),
+                'label' => esc_html__( 'Plans', 'pricing-grid-slider-for-elementor' ),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $plan_repeater->get_controls(),
                 'title_field' => '{{{ title }}}',
@@ -317,12 +317,12 @@ class Pricing_Plans_Widget extends Widget_Base {
 
     private function register_style_controls() {
         $this->start_controls_section( 'section_card_style', [
-            'label' => esc_html__( 'Card', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Card', 'pricing-grid-slider-for-elementor' ),
             'tab' => Controls_Manager::TAB_STYLE,
         ] );
 
         $this->add_responsive_control( 'card_padding', [
-            'label' => esc_html__( 'Padding', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Padding', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', 'em', 'rem', '%' ],
             'default' => [ 'top' => 32, 'right' => 28, 'bottom' => 32, 'left' => 28, 'unit' => 'px' ],
@@ -330,7 +330,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         ] );
 
         $this->add_control( 'card_radius', [
-            'label' => esc_html__( 'Border Radius', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Border Radius', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::SLIDER,
             'size_units' => [ 'px', 'em', 'rem', '%' ],
             'range' => [ 'px' => [ 'min' => 0, 'max' => 80 ] ],
@@ -339,7 +339,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         ] );
 
         $this->start_controls_tabs( 'card_style_tabs' );
-        $this->start_controls_tab( 'card_normal', [ 'label' => esc_html__( 'Normal', 'mahdi-pricing-plans' ) ] );
+        $this->start_controls_tab( 'card_normal', [ 'label' => esc_html__( 'Normal', 'pricing-grid-slider-for-elementor' ) ] );
         $this->add_group_control( Group_Control_Background::get_type(), [
             'name' => 'card_background',
             'types' => [ 'classic', 'gradient' ],
@@ -355,15 +355,15 @@ class Pricing_Plans_Widget extends Widget_Base {
         ] );
         $this->end_controls_tab();
 
-        $this->start_controls_tab( 'card_hover', [ 'label' => esc_html__( 'Hover', 'mahdi-pricing-plans' ) ] );
+        $this->start_controls_tab( 'card_hover', [ 'label' => esc_html__( 'Hover', 'pricing-grid-slider-for-elementor' ) ] );
         $this->add_control( 'card_hover_transform', [
-            'label' => esc_html__( 'Lift on Hover', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Lift on Hover', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::SWITCHER,
             'return_value' => 'yes',
             'default' => 'yes',
         ] );
         $this->add_control( 'card_hover_border_color', [
-            'label' => esc_html__( 'Border Color', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Border Color', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-card:hover' => 'border-color: {{VALUE}};' ],
         ] );
@@ -376,12 +376,12 @@ class Pricing_Plans_Widget extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section( 'section_typography_style', [
-            'label' => esc_html__( 'Typography & Colors', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Typography & Colors', 'pricing-grid-slider-for-elementor' ),
             'tab' => Controls_Manager::TAB_STYLE,
         ] );
 
         $this->add_control( 'title_color', [
-            'label' => esc_html__( 'Title Color', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Title Color', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-title' => 'color: {{VALUE}};' ],
         ] );
@@ -390,7 +390,7 @@ class Pricing_Plans_Widget extends Widget_Base {
             'selector' => '{{WRAPPER}} .mpp-title',
         ] );
         $this->add_control( 'subtitle_color', [
-            'label' => esc_html__( 'Subtitle Color', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Subtitle Color', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-subtitle' => 'color: {{VALUE}};' ],
         ] );
@@ -399,7 +399,7 @@ class Pricing_Plans_Widget extends Widget_Base {
             'selector' => '{{WRAPPER}} .mpp-subtitle',
         ] );
         $this->add_control( 'price_color', [
-            'label' => esc_html__( 'Price Color', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Price Color', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-price-wrap' => 'color: {{VALUE}};' ],
         ] );
@@ -408,7 +408,7 @@ class Pricing_Plans_Widget extends Widget_Base {
             'selector' => '{{WRAPPER}} .mpp-price',
         ] );
         $this->add_control( 'feature_color', [
-            'label' => esc_html__( 'Feature Color', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Feature Color', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-feature' => 'color: {{VALUE}};' ],
         ] );
@@ -419,12 +419,12 @@ class Pricing_Plans_Widget extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section( 'section_features_style', [
-            'label' => esc_html__( 'Features List', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Features List', 'pricing-grid-slider-for-elementor' ),
             'tab' => Controls_Manager::TAB_STYLE,
         ] );
 
         $this->add_responsive_control( 'features_gap', [
-            'label' => esc_html__( 'Items Gap', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Items Gap', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::SLIDER,
             'size_units' => [ 'px', 'em', 'rem' ],
             'range' => [ 'px' => [ 'min' => 0, 'max' => 50 ] ],
@@ -432,7 +432,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'feature_icon_gap', [
-            'label' => esc_html__( 'Icon Gap', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Icon Gap', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::SLIDER,
             'size_units' => [ 'px', 'em', 'rem' ],
             'range' => [ 'px' => [ 'min' => 0, 'max' => 40 ] ],
@@ -440,19 +440,19 @@ class Pricing_Plans_Widget extends Widget_Base {
         ] );
 
         $this->add_control( 'feature_icon_color', [
-            'label' => esc_html__( 'Icon Color', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Icon Color', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-feature-icon' => 'color: {{VALUE}};' ],
         ] );
 
         $this->add_control( 'feature_icon_bg', [
-            'label' => esc_html__( 'Icon Background', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Icon Background', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-feature-icon' => 'background-color: {{VALUE}};' ],
         ] );
 
         $this->add_responsive_control( 'feature_icon_size', [
-            'label' => esc_html__( 'Icon Size', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Icon Size', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::SLIDER,
             'size_units' => [ 'px', 'em', 'rem' ],
             'range' => [ 'px' => [ 'min' => 6, 'max' => 60 ] ],
@@ -460,7 +460,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'feature_icon_box_size', [
-            'label' => esc_html__( 'Icon Box Size', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Icon Box Size', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::SLIDER,
             'size_units' => [ 'px', 'em', 'rem' ],
             'range' => [ 'px' => [ 'min' => 10, 'max' => 90 ] ],
@@ -468,7 +468,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         ] );
 
         $this->add_control( 'feature_icon_radius', [
-            'label' => esc_html__( 'Icon Radius', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Icon Radius', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::SLIDER,
             'size_units' => [ 'px', '%' ],
             'range' => [ 'px' => [ 'min' => 0, 'max' => 60 ] ],
@@ -483,18 +483,18 @@ class Pricing_Plans_Widget extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section( 'section_slider_style', [
-            'label' => esc_html__( 'Slider Navigation', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Slider Navigation', 'pricing-grid-slider-for-elementor' ),
             'tab' => Controls_Manager::TAB_STYLE,
             'condition' => [ 'layout_type' => 'slider' ],
         ] );
 
         $this->add_control( 'slider_arrows_heading', [
-            'label' => esc_html__( 'Arrows', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Arrows', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::HEADING,
         ] );
 
         $this->add_responsive_control( 'arrow_size', [
-            'label' => esc_html__( 'Button Size', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Button Size', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::SLIDER,
             'size_units' => [ 'px', 'em', 'rem' ],
             'range' => [ 'px' => [ 'min' => 24, 'max' => 100 ] ],
@@ -502,7 +502,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'arrow_icon_size', [
-            'label' => esc_html__( 'Icon Size', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Icon Size', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::SLIDER,
             'size_units' => [ 'px', 'em', 'rem' ],
             'range' => [ 'px' => [ 'min' => 6, 'max' => 36 ] ],
@@ -510,7 +510,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'arrow_offset', [
-            'label' => esc_html__( 'Side Offset', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Side Offset', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::SLIDER,
             'size_units' => [ 'px', 'em', 'rem' ],
             'range' => [ 'px' => [ 'min' => -80, 'max' => 120 ] ],
@@ -523,31 +523,31 @@ class Pricing_Plans_Widget extends Widget_Base {
         ] );
 
         $this->add_control( 'arrow_color', [
-            'label' => esc_html__( 'Icon Color', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Icon Color', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-swiper-button::before' => 'border-color: {{VALUE}};' ],
         ] );
 
         $this->add_control( 'arrow_bg', [
-            'label' => esc_html__( 'Background', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Background', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-swiper-button' => 'background-color: {{VALUE}};' ],
         ] );
 
         $this->add_control( 'arrow_hover_color', [
-            'label' => esc_html__( 'Hover Icon Color', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Hover Icon Color', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-swiper-button:hover::before' => 'border-color: {{VALUE}};' ],
         ] );
 
         $this->add_control( 'arrow_hover_bg', [
-            'label' => esc_html__( 'Hover Background', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Hover Background', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-swiper-button:hover' => 'background-color: {{VALUE}};' ],
         ] );
 
         $this->add_control( 'arrow_radius', [
-            'label' => esc_html__( 'Border Radius', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Border Radius', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::SLIDER,
             'size_units' => [ 'px', '%' ],
             'range' => [ 'px' => [ 'min' => 0, 'max' => 80 ] ],
@@ -565,13 +565,13 @@ class Pricing_Plans_Widget extends Widget_Base {
         ] );
 
         $this->add_control( 'slider_dots_heading', [
-            'label' => esc_html__( 'Pagination', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Pagination', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::HEADING,
             'separator' => 'before',
         ] );
 
         $this->add_responsive_control( 'dots_size', [
-            'label' => esc_html__( 'Dot Size', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Dot Size', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::SLIDER,
             'size_units' => [ 'px', 'em', 'rem' ],
             'range' => [ 'px' => [ 'min' => 4, 'max' => 40 ] ],
@@ -579,7 +579,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'dots_gap', [
-            'label' => esc_html__( 'Dots Gap', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Dots Gap', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::SLIDER,
             'size_units' => [ 'px', 'em', 'rem' ],
             'range' => [ 'px' => [ 'min' => 0, 'max' => 40 ] ],
@@ -587,7 +587,7 @@ class Pricing_Plans_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'dots_bottom_offset', [
-            'label' => esc_html__( 'Bottom Offset', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Bottom Offset', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::SLIDER,
             'size_units' => [ 'px', 'em', 'rem' ],
             'range' => [ 'px' => [ 'min' => -40, 'max' => 120 ] ],
@@ -595,13 +595,13 @@ class Pricing_Plans_Widget extends Widget_Base {
         ] );
 
         $this->add_control( 'dots_color', [
-            'label' => esc_html__( 'Dot Color', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Dot Color', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-swiper-pagination .swiper-pagination-bullet' => 'background-color: {{VALUE}};' ],
         ] );
 
         $this->add_control( 'dots_active_color', [
-            'label' => esc_html__( 'Active Dot Color', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Active Dot Color', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-swiper-pagination .swiper-pagination-bullet-active' => 'background-color: {{VALUE}};' ],
         ] );
@@ -609,43 +609,43 @@ class Pricing_Plans_Widget extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section( 'section_button_style', [
-            'label' => esc_html__( 'Button', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Button', 'pricing-grid-slider-for-elementor' ),
             'tab' => Controls_Manager::TAB_STYLE,
         ] );
         $this->add_responsive_control( 'button_padding', [
-            'label' => esc_html__( 'Padding', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Padding', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', 'em', 'rem' ],
             'selectors' => [ '{{WRAPPER}} .mpp-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};' ],
         ] );
         $this->add_control( 'button_radius', [
-            'label' => esc_html__( 'Border Radius', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Border Radius', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::SLIDER,
             'size_units' => [ 'px', '%' ],
             'range' => [ 'px' => [ 'min' => 0, 'max' => 60 ] ],
             'selectors' => [ '{{WRAPPER}} .mpp-button' => 'border-radius: {{SIZE}}{{UNIT}};' ],
         ] );
         $this->start_controls_tabs( 'button_style_tabs' );
-        $this->start_controls_tab( 'button_normal', [ 'label' => esc_html__( 'Normal', 'mahdi-pricing-plans' ) ] );
+        $this->start_controls_tab( 'button_normal', [ 'label' => esc_html__( 'Normal', 'pricing-grid-slider-for-elementor' ) ] );
         $this->add_control( 'button_color', [
-            'label' => esc_html__( 'Text Color', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Text Color', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-button' => 'color: {{VALUE}};' ],
         ] );
         $this->add_control( 'button_bg', [
-            'label' => esc_html__( 'Background', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Background', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-button' => 'background-color: {{VALUE}};' ],
         ] );
         $this->end_controls_tab();
-        $this->start_controls_tab( 'button_hover', [ 'label' => esc_html__( 'Hover', 'mahdi-pricing-plans' ) ] );
+        $this->start_controls_tab( 'button_hover', [ 'label' => esc_html__( 'Hover', 'pricing-grid-slider-for-elementor' ) ] );
         $this->add_control( 'button_hover_color', [
-            'label' => esc_html__( 'Text Color', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Text Color', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-button:hover' => 'color: {{VALUE}};' ],
         ] );
         $this->add_control( 'button_hover_bg', [
-            'label' => esc_html__( 'Background', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Background', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-button:hover' => 'background-color: {{VALUE}};' ],
         ] );
@@ -654,21 +654,21 @@ class Pricing_Plans_Widget extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section( 'section_badge_style', [
-            'label' => esc_html__( 'Badge & Featured', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Badge & Featured', 'pricing-grid-slider-for-elementor' ),
             'tab' => Controls_Manager::TAB_STYLE,
         ] );
         $this->add_control( 'badge_color', [
-            'label' => esc_html__( 'Badge Text', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Badge Text', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-badge' => 'color: {{VALUE}};' ],
         ] );
         $this->add_control( 'badge_bg', [
-            'label' => esc_html__( 'Badge Background', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Badge Background', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-badge' => 'background-color: {{VALUE}};' ],
         ] );
         $this->add_control( 'featured_border_color', [
-            'label' => esc_html__( 'Featured Border', 'mahdi-pricing-plans' ),
+            'label' => esc_html__( 'Featured Border', 'pricing-grid-slider-for-elementor' ),
             'type' => Controls_Manager::COLOR,
             'selectors' => [ '{{WRAPPER}} .mpp-card.is-featured' => 'border-color: {{VALUE}};' ],
         ] );
@@ -680,7 +680,7 @@ class Pricing_Plans_Widget extends Widget_Base {
 
         foreach ( $labels as $label ) {
             $features[] = [
-                'feature_text' => esc_html__( $label, 'mahdi-pricing-plans' ),
+                'feature_text' => esc_html__( $label, 'pricing-grid-slider-for-elementor' ),
                 'feature_icon' => [
                     'value' => 'fas fa-check',
                     'library' => 'fa-solid',
@@ -696,37 +696,37 @@ class Pricing_Plans_Widget extends Widget_Base {
     private function get_default_plans() {
         return [
             [
-                'title' => esc_html__( 'Starter', 'mahdi-pricing-plans' ),
-                'subtitle' => esc_html__( 'Perfect for personal projects.', 'mahdi-pricing-plans' ),
+                'title' => esc_html__( 'Starter', 'pricing-grid-slider-for-elementor' ),
+                'subtitle' => esc_html__( 'Perfect for personal projects.', 'pricing-grid-slider-for-elementor' ),
                 'currency' => '$',
                 'price' => '19',
-                'period' => esc_html__( '/ month', 'mahdi-pricing-plans' ),
+                'period' => esc_html__( '/ month', 'pricing-grid-slider-for-elementor' ),
                 'features_list' => $this->get_default_features( [ '5 projects', 'Basic support', 'Core analytics', 'Community access' ] ),
-                'button_text' => esc_html__( 'Start Now', 'mahdi-pricing-plans' ),
+                'button_text' => esc_html__( 'Start Now', 'pricing-grid-slider-for-elementor' ),
                 'button_link' => [ 'url' => '#' ],
                 'badge_text' => '',
                 'is_featured' => '',
             ],
             [
-                'title' => esc_html__( 'Professional', 'mahdi-pricing-plans' ),
-                'subtitle' => esc_html__( 'Best choice for growing teams.', 'mahdi-pricing-plans' ),
+                'title' => esc_html__( 'Professional', 'pricing-grid-slider-for-elementor' ),
+                'subtitle' => esc_html__( 'Best choice for growing teams.', 'pricing-grid-slider-for-elementor' ),
                 'currency' => '$',
                 'price' => '49',
-                'period' => esc_html__( '/ month', 'mahdi-pricing-plans' ),
+                'period' => esc_html__( '/ month', 'pricing-grid-slider-for-elementor' ),
                 'features_list' => $this->get_default_features( [ 'Unlimited projects', 'Priority support', 'Advanced analytics', 'Custom integrations' ] ),
-                'button_text' => esc_html__( 'Choose Pro', 'mahdi-pricing-plans' ),
+                'button_text' => esc_html__( 'Choose Pro', 'pricing-grid-slider-for-elementor' ),
                 'button_link' => [ 'url' => '#' ],
-                'badge_text' => esc_html__( 'Popular', 'mahdi-pricing-plans' ),
+                'badge_text' => esc_html__( 'Popular', 'pricing-grid-slider-for-elementor' ),
                 'is_featured' => 'yes',
             ],
             [
-                'title' => esc_html__( 'Enterprise', 'mahdi-pricing-plans' ),
-                'subtitle' => esc_html__( 'For serious scale and support.', 'mahdi-pricing-plans' ),
+                'title' => esc_html__( 'Enterprise', 'pricing-grid-slider-for-elementor' ),
+                'subtitle' => esc_html__( 'For serious scale and support.', 'pricing-grid-slider-for-elementor' ),
                 'currency' => '$',
                 'price' => '99',
-                'period' => esc_html__( '/ month', 'mahdi-pricing-plans' ),
+                'period' => esc_html__( '/ month', 'pricing-grid-slider-for-elementor' ),
                 'features_list' => $this->get_default_features( [ 'Everything in Pro', 'Dedicated manager', 'SLA support', 'White-label options' ] ),
-                'button_text' => esc_html__( 'Contact Sales', 'mahdi-pricing-plans' ),
+                'button_text' => esc_html__( 'Contact Sales', 'pricing-grid-slider-for-elementor' ),
                 'button_link' => [ 'url' => '#' ],
                 'badge_text' => '',
                 'is_featured' => '',
@@ -783,8 +783,8 @@ class Pricing_Plans_Widget extends Widget_Base {
 
         if ( $is_slider ) {
             if ( 'yes' === ( $settings['slider_arrows'] ?? '' ) ) {
-                echo '<button class="mpp-swiper-button mpp-swiper-prev" type="button" aria-label="' . esc_attr__( 'Previous slide', 'mahdi-pricing-plans' ) . '"></button>';
-                echo '<button class="mpp-swiper-button mpp-swiper-next" type="button" aria-label="' . esc_attr__( 'Next slide', 'mahdi-pricing-plans' ) . '"></button>';
+                echo '<button class="mpp-swiper-button mpp-swiper-prev" type="button" aria-label="' . esc_attr__( 'Previous slide', 'pricing-grid-slider-for-elementor' ) . '"></button>';
+                echo '<button class="mpp-swiper-button mpp-swiper-next" type="button" aria-label="' . esc_attr__( 'Next slide', 'pricing-grid-slider-for-elementor' ) . '"></button>';
             }
             if ( 'yes' === ( $settings['slider_dots'] ?? '' ) ) {
                 echo '<div class="mpp-swiper-pagination"></div>';

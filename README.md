@@ -1,9 +1,9 @@
-# Benyamin Hope Pricing
+# Pricing Grid & Slider for Elementor
 
 Author: Mahdi Hassani  
 Version: 1.0.6
 
-A custom Elementor plugin that adds a polished **Benyamin Hope Pricing** widget.
+A custom Elementor plugin that adds a polished **Pricing Grid & Slider for Elementor** widget.
 
 ## Features
 
@@ -17,11 +17,11 @@ A custom Elementor plugin that adds a polished **Benyamin Hope Pricing** widget.
 
 ## Install
 
-1. Upload `benyamin-hope-pricing.zip` from WordPress Admin > Plugins > Add New > Upload Plugin.
+1. Upload `pricing-grid-slider-for-elementor.zip` from WordPress Admin > Plugins > Add New > Upload Plugin.
 2. Activate the plugin.
 3. Make sure Elementor is installed and activated.
 4. Edit a page with Elementor.
-5. Search for **Benyamin Hope Pricing** under **Benyamin Hope Widgets**.
+5. Search for **Pricing Grid & Slider for Elementor** under **Pricing Widgets**.
 
 ## Notes
 
