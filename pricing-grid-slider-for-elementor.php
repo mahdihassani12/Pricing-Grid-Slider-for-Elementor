@@ -1,11 +1,13 @@
 <?php
 /**
- * Plugin Name: Benyamin Hope Pricing
+ * Plugin Name: Pricing Grid & Slider for Elementor
  * Description: A flexible Elementor pricing plans widget with Grid/Slider modes, RTL support, and deep style controls.
  * Version: 1.0.6
  * Author: Mahdi Hassani
  * Author URI: 
- * Text Domain: mahdi-pricing-plans
+ * License: GPLv2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: pricing-grid-slider-for-elementor
  * Domain Path: /languages
  * Requires at least: 6.0
  * Requires PHP: 7.4
@@ -35,7 +37,7 @@ final class Mahdi_Pricing_Plans_Plugin {
     }
 
     public function init() {
-        load_plugin_textdomain( 'mahdi-pricing-plans', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+        load_plugin_textdomain( 'pricing-grid-slider-for-elementor', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
         if ( ! did_action( 'elementor/loaded' ) ) {
             add_action( 'admin_notices', [ $this, 'admin_notice_missing_elementor' ] );
@@ -62,12 +64,12 @@ final class Mahdi_Pricing_Plans_Plugin {
         if ( isset( $_GET['activate'] ) ) {
             unset( $_GET['activate'] );
         }
-        echo '<div class="notice notice-warning is-dismissible"><p>' . esc_html__( 'Benyamin Hope Pricing requires Elementor to be installed and activated.', 'mahdi-pricing-plans' ) . '</p></div>';
+        echo '<div class="notice notice-warning is-dismissible"><p>' . esc_html__( 'Pricing Grid & Slider for Elementor requires Elementor to be installed and activated.', 'pricing-grid-slider-for-elementor' ) . '</p></div>';
     }
 
     public function admin_notice_minimum_php_version() {
         echo '<div class="notice notice-warning is-dismissible"><p>' . sprintf(
-            esc_html__( 'Benyamin Hope Pricing requires PHP %1$s or newer. You are running PHP %2$s.', 'mahdi-pricing-plans' ),
+            esc_html__( 'Pricing Grid & Slider for Elementor requires PHP %1$s or newer. You are running PHP %2$s.', 'pricing-grid-slider-for-elementor' ),
             esc_html( self::MINIMUM_PHP_VERSION ),
             esc_html( PHP_VERSION )
         ) . '</p></div>';
@@ -75,7 +77,7 @@ final class Mahdi_Pricing_Plans_Plugin {
 
     public function admin_notice_minimum_elementor_version() {
         echo '<div class="notice notice-warning is-dismissible"><p>' . sprintf(
-            esc_html__( 'Benyamin Hope Pricing requires Elementor %1$s or newer.', 'mahdi-pricing-plans' ),
+            esc_html__( 'Pricing Grid & Slider for Elementor requires Elementor %1$s or newer.', 'pricing-grid-slider-for-elementor' ),
             esc_html( self::MINIMUM_ELEMENTOR_VERSION )
         ) . '</p></div>';
     }
@@ -84,7 +86,7 @@ final class Mahdi_Pricing_Plans_Plugin {
         $elements_manager->add_category(
             'mahdi-widgets',
             [
-                'title' => esc_html__( 'Benyamin Hope Widgets', 'mahdi-pricing-plans' ),
+                'title' => esc_html__( 'Pricing Widgets', 'pricing-grid-slider-for-elementor' ),
                 'icon'  => 'fa fa-plug',
             ]
         );
@@ -92,7 +94,7 @@ final class Mahdi_Pricing_Plans_Plugin {
 
     public function register_styles() {
         wp_register_style(
-            'mahdi-pricing-plans',
+            'pricing-grid-slider-for-elementor',
             plugins_url( 'assets/css/pricing-plans.css', __FILE__ ),
             [],
             self::VERSION
@@ -101,7 +103,7 @@ final class Mahdi_Pricing_Plans_Plugin {
 
     public function register_scripts() {
         wp_register_script(
-            'mahdi-pricing-plans',
+            'pricing-grid-slider-for-elementor',
             plugins_url( 'assets/js/pricing-plans.js', __FILE__ ),
             [ 'elementor-frontend' ],
             self::VERSION,
